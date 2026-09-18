@@ -1,0 +1,1463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Muhammad Talha | Portfolio</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      scroll-behavior:smooth;
+    }
+
+    body{
+      font-family: 'Segoe UI', sans-serif;
+      background:#07111f;
+      color:white;
+      overflow-x:hidden;
+    }
+
+    a{
+      text-decoration:none;
+      color:inherit;
+    }
+
+    ::selection{
+      background:#00e5ff;
+      color:#000;
+    }
+
+    /* ================= NAVBAR ================= */
+
+    nav{
+      position:fixed;
+      top:0;
+      left:0;
+      width:100%;
+      height:75px;
+      backdrop-filter:blur(12px);
+      background:rgba(8,15,28,0.8);
+      border-bottom:1px solid rgba(255,255,255,0.08);
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:0 8%;
+      z-index:1000;
+    }
+
+    .logo{
+      font-size:28px;
+      font-weight:700;
+      background:linear-gradient(90deg,#00e5ff,#00ff99);
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
+    }
+
+    nav ul{
+      display:flex;
+      gap:35px;
+      list-style:none;
+    }
+
+    nav ul li a{
+      color:#dbe7ff;
+      transition:0.3s;
+      font-size:17px;
+      font-weight: bold;
+    }
+
+    nav ul li a:hover{
+      color:#00e5ff;
+    }
+
+    /* ================= HERO ================= */
+
+    .hero{
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:120px 8%;
+      position:relative;
+      overflow:hidden;
+      background:
+      radial-gradient(circle at top left, rgba(0,229,255,0.18), transparent 30%),
+      radial-gradient(circle at bottom right, rgba(0,255,153,0.12), transparent 25%),
+      #07111f;
+    }
+
+    .hero-left{
+      width:90%;
+      animation:fadeUp 1s ease;
+    }
+
+    .tag{
+      display:inline-block;
+      padding:10px 18px;
+      background:rgba(255,255,255,0.06);
+      border:1px solid rgba(255,255,255,0.08);
+      border-radius:30px;
+      color:#00e5ff;
+      margin-bottom:20px;
+      font-size:14px;
+      font-weight: 700;
+    }
+
+    .hero h1{
+      font-size:70px;
+      line-height:1.1;
+      margin-bottom:20px;
+    }
+
+    .hero h1 span{
+      background:linear-gradient(90deg,#00e5ff,#00ff99);
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
+    }
+
+    .hero p{
+      color:#b8c4d6;
+      font-size:18px;
+      line-height:1.8;
+      max-width:700px;
+      margin-bottom:35px;
+    }
+
+    .hero-btns{
+      display:flex;
+      gap:18px;
+      flex-wrap:wrap;
+    }
+
+    .btn{
+      padding:15px 30px;
+      border-radius:12px;
+      border:none;
+      font-size:15px;
+      cursor:pointer;
+      transition:0.4s;
+      font-weight:600;
+    }
+
+    .primary-btn{
+      background:linear-gradient(90deg,#00e5ff,#00ff99);
+      color:#000;
+    }
+
+    .primary-btn:hover{
+      transform:translateY(-5px);
+      box-shadow:0 15px 35px rgba(0,229,255,0.3);
+    }
+
+    .secondary-btn{
+      background:transparent;
+      border:1px solid rgba(255,255,255,0.15);
+      color:white;
+    }
+
+    .secondary-btn:hover{
+      background:rgba(255,255,255,0.08);
+      transform:translateY(-5px);
+    }
+
+    .hero-right{
+      width:40%;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      position:relative;
+    }
+
+    .profile-card{
+      width:360px;
+      height:430px;
+      border-radius:30px;
+      background:rgba(255,255,255,0.05);
+      border:1px solid rgba(255,255,255,0.08);
+      backdrop-filter:blur(15px);
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      align-items:center;
+      position:relative;
+      overflow:hidden;
+      box-shadow:0 20px 60px rgba(0,0,0,0.45);
+    }
+
+    .profile-card::before{
+      content:'';
+      position:absolute;
+      width:200px;
+      height:200px;
+      background:#00e5ff;
+      filter:blur(120px);
+      opacity:0.25;
+      top:-50px;
+      right:-50px;
+    }
+
+.profile-card img{
+  width:170px;
+  height:170px;
+  border-radius:50%;
+  border:5px solid rgba(255,255,255,0.12);
+  object-fit:cover;
+  object-position:center 15%;
+  margin-bottom:25px;
+  background:#dfe4ea;
+  padding:6px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.35);
+
+  filter:
+    contrast(92%)
+    saturate(95%)
+    brightness(98%)
+    blur(0.3px);
+}
+
+
+
+    .profile-card h2{
+      font-size:30px;
+      margin-bottom:10px;
+    }
+
+    .profile-card p{
+      color:#a7b7d1;
+      margin-bottom:25px;
+    }
+
+    .socials{
+      display:flex;
+      gap:18px;
+    }
+
+    .socials a{
+      width:48px;
+      height:48px;
+      background:rgba(255,255,255,0.08);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      border-radius:12px;
+      transition:0.3s;
+      font-size:18px;
+    }
+
+    .socials a:hover{
+      transform:translateY(-6px);
+      background:linear-gradient(90deg,#00e5ff,#00ff99);
+      color:#000;
+    }
+
+    /* ================= SECTIONS ================= */
+
+    section{
+      padding:100px 8%;
+    }
+
+    .section-title{
+      font-size:45px;
+      margin-bottom:20px;
+      text-align:center;
+    }
+
+    .section-title span{
+      color:#00e5ff;
+    }
+
+    .section-sub{
+      text-align:center;
+      color:#9fb0c8;
+      max-width:700px;
+      margin:auto;
+      line-height:1.8;
+      margin-bottom:60px;
+    }
+
+    /* ================= ABOUT ================= */
+
+    .about-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:40px;
+    }
+
+    .glass-card{
+      background:rgba(255,255,255,0.05);
+      border:1px solid rgba(255,255,255,0.08);
+      padding:35px;
+      border-radius:24px;
+      backdrop-filter:blur(10px);
+      transition:0.4s;
+    }
+
+    .glass-card:hover{
+      transform:translateY(-8px);
+      border-color:#00e5ff;
+    }
+
+    .glass-card h3{
+      margin-bottom:18px;
+      font-size:25px;
+    }
+
+    .glass-card p{
+      color:#b8c4d6;
+      line-height:1.8;
+    }
+
+    .info-list{
+      margin-top:20px;
+      display:flex;
+      flex-direction:column;
+      gap:15px;
+    }
+
+    .info-list div{
+      display:flex;
+      gap:12px;
+      color:#d6e2f0;
+    }
+
+    .info-list i{
+      color:#00e5ff;
+    }
+
+    /* ================= SKILLS ================= */
+
+    .skills-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+      gap:25px;
+    }
+
+    .skill-card{
+      padding:30px;
+      border-radius:22px;
+      background:rgba(255,255,255,0.05);
+      border:1px solid rgba(255,255,255,0.08);
+      transition:0.4s;
+      text-align:center;
+    }
+
+    .skill-card:hover{
+      transform:translateY(-10px);
+      background:linear-gradient(135deg,rgba(0,229,255,0.12),rgba(0,255,153,0.12));
+    }
+
+    .skill-card i{
+      font-size:45px;
+      margin-bottom:20px;
+      color:#00e5ff;
+    }
+
+    .skill-card h4{
+      margin-bottom:12px;
+      font-size:22px;
+    }
+
+    .skill-card p{
+      color:#b8c4d6;
+      line-height:1.7;
+      font-size:15px;
+    }
+
+    /* ================= PROJECTS ================= */
+
+    .projects-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+      gap:30px;
+    }
+
+    .project-card{
+      background:rgba(255,255,255,0.05);
+      border:1px solid rgba(255,255,255,0.08);
+      border-radius:25px;
+      overflow:hidden;
+      transition:0.4s;
+      position:relative;
+    }
+
+    .project-card:hover{
+      transform:translateY(-10px);
+      border-color:#00e5ff;
+    }
+
+    .project-img{
+      height:220px;
+      overflow:hidden;
+    }
+
+    .project-img img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      transition:0.5s;
+    }
+
+    .project-card:hover img{
+      transform:scale(1.08);
+    }
+
+    .project-content{
+      padding:28px;
+    }
+
+    .project-content h3{
+      margin-bottom:15px;
+      font-size:24px;
+    }
+
+    .project-content p{
+      color:#b8c4d6;
+      line-height:1.7;
+      margin-bottom:22px;
+    }
+
+    .project-links{
+      display:flex;
+      gap:15px;
+      flex-wrap:wrap;
+    }
+
+    .project-links a{
+      padding:12px 18px;
+      border-radius:10px;
+      background:rgba(255,255,255,0.08);
+      transition:0.3s;
+      font-size:14px;
+    }
+
+    .project-links a:hover{
+      background:linear-gradient(90deg,#00e5ff,#00ff99);
+      color:#000;
+    }
+
+    /* ================= TIMELINE ================= */
+
+    .timeline{
+      position:relative;
+      max-width:900px;
+      margin:auto;
+    }
+
+    .timeline::before{
+      content:'';
+      position:absolute;
+      left:50%;
+      width:3px;
+      height:100%;
+      background:#00e5ff;
+      transform:translateX(-50%);
+    }
+
+    .timeline-item{
+      width:50%;
+      padding:25px 40px;
+      position:relative;
+    }
+
+    .timeline-item:nth-child(odd){
+      left:0;
+      text-align:right;
+    }
+
+    .timeline-item:nth-child(even){
+      left:50%;
+    }
+
+    .timeline-content{
+      background:rgba(255,255,255,0.05);
+      padding:28px;
+      border-radius:20px;
+      border:1px solid rgba(255,255,255,0.08);
+    }
+
+    .timeline-content h3{
+      margin-bottom:10px;
+      color:#00e5ff;
+    }
+
+    .timeline-content p{
+      color:#b8c4d6;
+      line-height:1.7;
+      text-align: left;
+    }
+
+    /* ================= CONTACT ================= */
+
+    .contact-box{
+      max-width:800px;
+      margin:auto;
+      background:rgba(255,255,255,0.05);
+      border:1px solid rgba(255,255,255,0.08);
+      border-radius:30px;
+      padding:50px;
+      text-align:center;
+    }
+
+    .contact-box h2{
+      margin-bottom:20px;
+      font-size:40px;
+    }
+
+    .contact-box p{
+      color:#b8c4d6;
+      line-height:1.8;
+      margin-bottom:35px;
+    }
+
+    .contact-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+      gap:20px;
+    }
+
+    .contact-card{
+      padding:25px;
+      background:rgba(255,255,255,0.04);
+      border-radius:20px;
+      transition:0.3s;
+    }
+
+    .contact-card:hover{
+      transform:translateY(-8px);
+      background:rgba(255,255,255,0.08);
+    }
+
+    .contact-card i{
+      font-size:32px;
+      color:#00e5ff;
+      margin-bottom:15px;
+    }
+
+    footer{
+      text-align:center;
+      padding:30px;
+      color:#7f90a8;
+      border-top:1px solid rgba(255,255,255,0.08);
+      margin-top:60px;
+    }
+
+    /* ================= ANIMATIONS ================= */
+
+    @keyframes fadeUp{
+      from{
+        opacity:0;
+        transform:translateY(40px);
+      }
+      to{
+        opacity:1;
+        transform:translateY(0);
+      }
+    }
+
+    /* ================= RESPONSIVE ================= */
+/* ================= RESPONSIVE ================= */
+
+/* ---------- LARGE LAPTOPS ---------- */
+
+@media(max-width:1200px){
+
+  .hero{
+    gap:50px;
+  }
+
+  .hero h1{
+    font-size:58px;
+  }
+
+  .hero-left{
+    width:55%;
+  }
+
+  .hero-right{
+    width:45%;
+  }
+
+}
+
+
+/* ---------- TABLETS ---------- */
+
+@media(max-width:992px){
+
+  nav{
+    padding:0 5%;
+  }
+
+  nav ul{
+    gap:20px;
+  }
+
+  nav ul li a{
+    font-size:15px;
+  }
+
+  .hero{
+    flex-direction:column-reverse;
+    justify-content:center;
+    text-align:center;
+    padding:140px 6% 80px;
+    gap:50px;
+  }
+
+  .hero-left,
+  .hero-right{
+    width:100%;
+  }
+
+  .hero-left{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+  }
+
+  .hero h1{
+    font-size:56px;
+    line-height:1.15;
+  }
+
+  .hero p{
+    font-size:17px;
+    max-width:100%;
+  }
+
+  .hero-btns{
+    justify-content:center;
+  }
+
+  .about-grid{
+    grid-template-columns:1fr;
+  }
+
+  .projects-grid{
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  }
+
+  .skills-grid{
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  }
+
+  .timeline::before{
+    left:18px;
+  }
+
+  .timeline-item{
+    width:100%;
+    left:0 !important;
+    padding-left:55px;
+    padding-right:0;
+    text-align:left !important;
+  }
+
+  .timeline-content{
+    text-align:left;
+  }
+
+}
+
+
+/* ---------- MOBILE DEVICES ---------- */
+
+@media(max-width:768px){
+
+  nav{
+    height:auto;
+    padding:18px 5%;
+    flex-direction:column;
+    gap:15px;
+  }
+
+  .logo{
+    font-size:24px;
+  }
+
+  nav ul{
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:14px;
+  }
+
+  nav ul li a{
+    font-size:14px;
+  }
+
+  section{
+    padding:80px 6%;
+  }
+
+  .hero{
+    padding-top:170px;
+  }
+
+  .tag{
+    font-size:13px;
+    padding:10px 16px;
+    text-align:center;
+  }
+
+  .hero h1{
+    font-size:42px;
+    line-height:1.2;
+  }
+
+  .hero h1 span{
+    display:inline;
+  }
+
+  .hero p{
+    font-size:16px;
+    line-height:1.7;
+  }
+
+  .hero-btns{
+    flex-direction:column;
+    width:100%;
+  }
+
+  .hero-btns a{
+    width:100%;
+  }
+
+  .btn{
+    width:100%;
+    font-size:15px;
+  }
+
+  .profile-card{
+    width:100%;
+    max-width:350px;
+    height:auto;
+    padding:35px 20px;
+  }
+
+  .profile-card img{
+    width:150px;
+    height:150px;
+  }
+
+  .profile-card h2{
+    font-size:26px;
+  }
+
+  .section-title{
+    font-size:34px;
+  }
+
+  .section-sub{
+    font-size:15px;
+    margin-bottom:40px;
+  }
+
+  .glass-card{
+    padding:28px 22px;
+  }
+
+  .glass-card h3{
+    font-size:22px;
+  }
+
+  .skills-grid,
+  .projects-grid,
+  .contact-grid{
+    grid-template-columns:1fr;
+  }
+
+  .project-img{
+    height:200px;
+  }
+
+  .project-content{
+    padding:22px;
+  }
+
+  .project-content h3{
+    font-size:22px;
+  }
+
+  .timeline-item{
+    padding-left:45px;
+  }
+
+  .timeline-content{
+    padding:22px;
+  }
+
+  .contact-box{
+    padding:35px 22px;
+  }
+
+  .contact-box h2{
+    font-size:32px;
+  }
+
+  footer{
+    font-size:14px;
+    padding:25px 15px;
+  }
+
+}
+
+
+/* ---------- SMALL MOBILE ---------- */
+
+@media(max-width:480px){
+
+  .hero{
+    padding-top:190px;
+  }
+
+  .hero h1{
+    font-size:34px;
+  }
+
+  .hero p{
+    font-size:15px;
+  }
+
+  .tag{
+    font-size:12px;
+  }
+
+  .profile-card{
+    max-width:100%;
+    border-radius:24px;
+  }
+
+  .profile-card img{
+    width:130px;
+    height:130px;
+  }
+
+  .section-title{
+    font-size:28px;
+  }
+
+  .glass-card,
+  .skill-card,
+  .contact-card{
+    padding:22px 18px;
+  }
+
+  .project-content h3{
+    font-size:20px;
+  }
+
+  .contact-box h2{
+    font-size:28px;
+  }
+
+}
+   
+
+  </style>
+</head>
+
+<body>
+
+  <!-- ================= NAVBAR ================= -->
+
+  <nav>
+    <div class="logo">M. Talha</div>
+
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="https://drive.google.com/file/d/1R_qU9Eb0ECbniPSN3Lp3cwJn_sQ12g5X/view?usp=drive_link" target="_blank">Resume</a></li>
+    </ul>
+  </nav>
+
+  <!-- ================= HERO ================= -->
+
+  <section class="hero" id="home">
+
+    <div class="hero-left">
+
+      <div class="tag">
+        Software Engineer & Web Developer 
+      </div>
+
+      <h1>
+        Hi, I'm <span>Muhammad Talha</span>
+      </h1>
+
+      <p>
+        Detail-oriented Computer Science student at FAST-NUCES with strong expertise
+        in Web Development, Data Structures, OOP, and System Design.
+        Passionate about building modern, scalable, and user-friendly applications
+        with clean UI/UX experiences.
+      </p>
+
+      <div class="hero-btns">
+        <a href="#projects">
+          <button class="btn primary-btn">
+            View Projects
+          </button>
+        </a>
+
+        <a href="#contact">
+          <button class="btn secondary-btn">
+            Contact Me
+          </button>
+        </a>
+      </div>
+
+    </div>
+
+    <div class="hero-right">
+
+      <div class="profile-card">
+
+        <img src="Profilee.png" alt="Talha">
+
+        <h2>Muhammad Talha</h2>
+
+        <p>BSCS Student • FAST-NUCES</p>
+
+        <div class="socials">
+
+          <a href="https://github.com/m-talha1021" target="_blank">
+            <i class="fa-brands fa-github"></i>
+          </a>
+
+          <a href="https://linkedin.com/in/muhammad-talha1200" target="_blank">
+            <i class="fa-brands fa-linkedin"></i>
+          </a>
+
+          <a href="mailto:0562talha@gmail.com">
+            <i class="fa-solid fa-envelope"></i>
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- ================= ABOUT ================= -->
+
+  <section id="about">
+
+    <h2 class="section-title">
+      About <span>Me</span>
+    </h2>
+
+    <p class="section-sub">
+      Passionate developer focused on modern web technologies,
+      scalable applications, UI/UX design, and problem solving.
+    </p>
+
+    <div class="about-grid">
+
+      <div class="glass-card">
+
+        <h3>Professional Summary</h3>
+
+        <p>
+          I am a Computer Science student at FAST National University with
+          hands-on experience in WordPress development, front-end web development and software engineering.
+          I enjoy building interactive, responsive, and elegant applications using WordPress, 
+          HTML, CSS, JavaScript, React, and C++.
+        </p>
+
+        <div class="info-list">
+
+          <div>
+            <i class="fa-solid fa-location-dot"></i>
+            Chiniot, Punjab, Pakistan
+          </div>
+
+          <div>
+            <i class="fa-solid fa-phone"></i>
+            0322-7808437
+          </div>
+
+          <div>
+            <i class="fa-solid fa-envelope"></i>
+            0562talha@gmail.com
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="glass-card">
+
+        <h3>Experience & Internship</h3>
+
+        <p>
+          Completed a 1-month Web Development Internship at Nexium where
+          I worked on responsive web interfaces, layouts, UI components,
+          and modern front-end development practices.
+        </p>
+
+        <div class="info-list">
+
+          <div>
+            <i class="fa-solid fa-code"></i>
+            Front-End Development
+          </div>
+
+          <div>
+            <i class="fa-solid fa-laptop-code"></i>
+            Responsive UI Design
+          </div>
+
+          <div>
+            <i class="fa-solid fa-diagram-project"></i>
+            SDLC & Team Collaboration
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- ================= SKILLS ================= -->
+
+  <section id="skills">
+
+    <h2 class="section-title">
+      My <span>Skills</span>
+    </h2>
+
+    <p class="section-sub">
+      Technologies, tools, and development skills I use to create modern applications.
+    </p>
+
+    <div class="skills-grid">
+
+      <div class="skill-card">
+        <i class="fa-brands fa-html5"></i>
+        <div class="skill-card">
+        <i class="fa-solid fa-code"></i>
+        <h4>WordPress</h4>
+        <p>
+          Themes, Plugins, Elementor, Astra, Woocommerce.
+        </p>
+      </div>
+       <div class="skill-card">
+          <i class="fa-solid fa-code"></i>
+        <h4>Frontend</h4>
+        <p>
+          HTML, CSS, JavaScript, React, responsive layouts,
+          animations, UI/UX design.
+        </p>
+      </div>
+
+      <div class="skill-card">
+        <i class="fa-solid fa-code"></i>
+        <h4>Programming</h4>
+        <p>
+          C++, Python, OOP, Data Structures,
+          Algorithms, System Design.
+        </p>
+      </div>
+
+      <div class="skill-card">
+        <i class="fa-solid fa-database"></i>
+        <h4>Database</h4>
+        <p>
+          MySQL database design, queries,
+          schema management, backend integration.
+        </p>
+      </div>
+
+      <div class="skill-card">
+        <i class="fa-brands fa-figma"></i>
+        <h4>Tools</h4>
+        <p>
+          GitHub, VS Code, Figma,
+          Visual Studio, Cisco Packet Tracer.
+        </p>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- ================= PROJECTS ================= -->
+
+  <section id="projects">
+
+    <h2 class="section-title">
+      Featured <span>Projects</span>
+    </h2>
+
+    <p class="section-sub">
+      Some of my modern web development and software engineering projects.
+    </p>
+
+    <div class="projects-grid">
+
+      <!-- PROJECT 1 -->
+
+      <div class="project-card">
+
+        <div class="project-img">
+          <img src="https://images.unsplash.com/photo-1556740749-887f6717d7e4?q=80&w=1200&auto=format&fit=crop">
+        </div>
+
+        <div class="project-content">
+
+          <h3>Online Store Web App</h3>
+
+          <p>
+            Responsive e-commerce application with category filtering,
+            shopping cart system, product catalog, and engaging UI design.
+          </p>
+
+          <div class="project-links">
+            <a href="https://online-store-6e.netlify.app/" target="_blank">
+              Live Demo
+            </a>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- PROJECT 2 -->
+
+      <div class="project-card">
+
+        <div class="project-img">
+          <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1200&auto=format&fit=crop">
+        </div>
+
+        <div class="project-content">
+
+          <h3>Student Portal</h3>
+
+          <p>
+            Interactive portal using HTML, CSS, and JavaScript
+            with real-time UI updates and dynamic DOM manipulation.
+          </p>
+
+          <div class="project-links">
+            <a href="https://student-portal-6e.netlify.app/" target="_blank">
+              Live Demo
+            </a>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- PROJECT 3 -->
+
+      <div class="project-card">
+
+        <div class="project-img">
+          <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=1200&auto=format&fit=crop">
+        </div>
+
+        <div class="project-content">
+
+          <h3>Foodies Landing Page</h3>
+
+          <p>
+            Modern food delivery website with hero section,
+            responsive layout, animations, and smooth navigation.
+          </p>
+
+          <div class="project-links">
+            <a href="https://f230562-foodies.netlify.app/" target="_blank">
+              Live Demo
+            </a>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- PROJECT 4 -->
+
+      <div class="project-card">
+
+        <div class="project-img">
+          <img src="https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?q=80&w=1200&auto=format&fit=crop">
+        </div>
+
+        <div class="project-content">
+
+          <h3>Logistics Website</h3>
+
+          <p>
+            Responsive logistics/courier website with
+            structured layouts, service sections, and modern UI design.
+          </p>
+
+          <div class="project-links">
+            <a href="https://23f0562-logistics-6e.netlify.app/" target="_blank">
+              Live Demo
+            </a>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- PROJECT 5 -->
+
+      <div class="project-card">
+
+        <div class="project-img">
+          <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1200&auto=format&fit=crop">
+        </div>
+
+        <div class="project-content">
+
+          <h3>Mini Instagram Simulator</h3>
+
+          <p>
+            C++ social media simulator implementing authentication,
+            messaging, notifications, followers, and post management.
+          </p>
+
+          <div class="project-links">
+            <a href="https://github.com/m-talha1021/Mini-Instagram_Project" target="_blank">
+              GitHub
+            </a>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- PROJECT 6 -->
+
+      <div class="project-card">
+
+        <div class="project-img">
+          <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1200&auto=format&fit=crop">
+        </div>
+
+        <div class="project-content">
+
+          <h3>Portfolio Website</h3>
+
+          <p>
+            Personal portfolio showcasing projects,
+            technical skills, and responsive UI/UX design.
+          </p>
+
+          <div class="project-links">
+            <a href="https://portfolio-page-6e.netlify.app/" target="_blank">
+              Live Demo
+            </a>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- ================= EDUCATION ================= -->
+
+  <section id="education">
+
+    <h2 class="section-title">
+      Education & <span>Journey</span>
+    </h2>
+
+    <p class="section-sub">
+      My academic background and learning experience in Computer Science.
+    </p>
+
+    <div class="timeline">
+
+      <div class="timeline-item">
+
+        <div class="timeline-content">
+
+          <h3>FAST-NUCES (2023 - 2027)</h3>
+
+          <p>
+            Bachelor of Science in Computer Science.
+            Relevant coursework includes OOP, Data Structures,
+            Design of Algorithms, Software Engineering,
+            HCI, Web Development, and SDLC.
+          </p>
+
+        </div>
+
+      </div>
+
+      <div class="timeline-item">
+
+        <div class="timeline-content">
+
+          <h3>Superior Group of Colleges</h3>
+
+          <p>
+            Intermediate in Computer Science (ICS)
+            completed from Superior Group of Colleges, Chiniot.
+          </p>
+
+        </div>
+
+      </div>
+
+      <div class="timeline-item">
+
+        <div class="timeline-content">
+
+          <h3>Web Development Internship</h3>
+
+          <p>
+            Completed internship at <b>Nexium</b> focused on responsive design,
+            front-end development, and modern UI implementation.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- ================= CONTACT ================= -->
+
+  <section id="contact">
+
+    <div class="contact-box">
+
+      <h2>Let's Work Together</h2>
+
+      <p>
+        Open to internships, freelance opportunities,
+        collaborations, and software engineering projects.
+      </p>
+
+      <div class="contact-grid">
+
+        <div class="contact-card">
+          <i class="fa-solid fa-envelope"></i>
+          <h4>Email</h4>
+          <p><a href="mailto:0562talha@gmail.com" target="_blank">0562talha@gmail.com</a></p>
+        </div>
+
+        <div class="contact-card">
+          <i class="fa-brands fa-github"></i>
+          <h4>GitHub</h4>
+          <p><a href="https://github.com/m-talha1021" target="_blank">github.com/m-talha1021</a></p>
+        </div>
+
+        <div class="contact-card">
+          <i class="fa-brands fa-linkedin"></i>
+          <h4>LinkedIn</h4>
+          <p><a href="https://linkedin.com/in/muhammad-talha1200" target="_blank">linkedin.com/in/muhammad-talha1200</a></p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+
+  <footer>
+    © 2026 Muhammad Talha.
+  </footer>
+
+  <!-- ================= JS ================= -->
+
+  <script>
+
+    // SCROLL NAV ACTIVE
+
+    const sections = document.querySelectorAll("section");
+    const navLinks = document.querySelectorAll("nav ul li a");
+
+    window.addEventListener("scroll", () => {
+
+      let current = "";
+
+      sections.forEach(section => {
+
+        const sectionTop = section.offsetTop - 120;
+
+        if(pageYOffset >= sectionTop){
+          current = section.getAttribute("id");
+        }
+
+      });
+
+      navLinks.forEach(link => {
+
+        link.style.color = "#dbe7ff";
+
+        if(link.getAttribute("href").includes(current)){
+          link.style.color = "#00e5ff";
+        }
+
+      });
+
+    });
+
+    // TYPING EFFECT
+
+    const titles = [
+      "Software Engineer",
+      "Web Developer",
+      "Frontend Developer",
+      "Problem Solver"
+    ];
+
+    let count = 0;
+    let index = 0;
+    let currentText = "";
+    let letter = "";
+
+    (function type(){
+
+      if(count === titles.length){
+        count = 0;
+      }
+
+      currentText = titles[count];
+      letter = currentText.slice(0, ++index);
+
+      document.querySelector(".tag").textContent = "I am a " + letter;
+
+      if(letter.length === currentText.length){
+
+        count++;
+        index = 0;
+
+        setTimeout(type, 1500);
+
+      }else{
+        setTimeout(type, 100);
+      }
+
+    })();
+
+  </script>
+
+</body>
+</html>
